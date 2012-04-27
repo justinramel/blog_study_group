@@ -5,6 +5,7 @@
 
 # spec/spec_helper_lite.rb
 require 'rr'
+require 'date'
 class MiniTest::Unit::TestCase
 	include RR::Adapters::MiniTest
 end
