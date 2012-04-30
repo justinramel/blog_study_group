@@ -28,13 +28,10 @@ class Blog
     @entries.sort_by{ |e| e.pubdate}.reverse.take(10)
   end
 
-
   private
 
   def post_source
     @post_source ||= Post.public_method(:new)
   end
-
-
 
 end

@@ -1,2 +1,0 @@
-echo $1
-ruby -rminitest/pride $1

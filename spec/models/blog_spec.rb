@@ -77,8 +77,4 @@ describe Blog do
     end
 
   end
-  
-  
-  
-  
 end

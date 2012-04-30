@@ -54,7 +54,6 @@ describe Post do
       assert @it.valid?
     end
 
-
     describe "given an invalid post" do
       before do
         @it.title = nil
@@ -70,33 +69,32 @@ describe Post do
       end
     end
 
-
     after do
       @blog.verify
     end
   end
 
-	describe "#pubdate" do
-		describe "before publishing" do
-			it "is blank" do
-				@it.pubdate.must_be_nil
-			end
-		end
-		describe "after publishing" do
-			before do
-				@clock = stub!
-				@now = DateTime.parse("2011-09-11T02:56")
-				stub(@clock).now(){@now}
-				@it.blog = stub!
+  describe "#pubdate" do
+    describe "before publishing" do
+      it "is blank" do
+        @it.pubdate.must_be_nil
+      end
+    end
+
+    describe "after publishing" do
+      before do
+        @clock = stub!
+        @now = DateTime.parse("2011-09-11T02:56")
+        stub(@clock).now(){@now}
+        @it.blog = stub!
         @it.title = "blah!"
-				@it.publish(@clock)
-			end
+        @it.publish(@clock)
+      end
 
-			it "is a datetime" do
-				@it.pubdate.must_equal(@now)
-			end
-		end
-	end
-
+      it "is a datetime" do
+        @it.pubdate.must_equal(@now)
+      end
+    end
+  end
 
 end
