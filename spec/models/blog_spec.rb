@@ -1,14 +1,14 @@
 require 'minitest/autorun'
+require 'active_model'
+require 'ostruct'
 
 require_relative '../spec_helper_lite'
+
 stub_module 'ActiveModel::Conversion'
 stub_module 'ActiveModel::Naming'
 
 require_relative '../../app/models/blog'
 require_relative '../../app/models/post'
-require 'ostruct'
-
-
 
 describe Blog do
   before do

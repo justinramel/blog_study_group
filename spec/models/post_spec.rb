@@ -1,10 +1,8 @@
 require 'minitest/autorun'
-#require 'minitest/pride'
+require 'active_model'
 require 'date'
 
 require_relative '../spec_helper_lite'
-require 'active_model'
-
 require_relative '../../app/models/post'
 
 describe Post do

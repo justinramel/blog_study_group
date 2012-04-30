@@ -11,7 +11,8 @@ gem 'execjs'
 gem 'therubyracer'
 
 group :development , :test do
-	gem 'rr'
+  gem 'rr'
+  gem 'minitest'
 end
 
 # Gems used only for assets and not required
