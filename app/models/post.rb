@@ -1,7 +1,6 @@
-
 class Post
-	extend ActiveModel::Naming
-	include ActiveModel::Conversion
+  extend ActiveModel::Naming
+  include ActiveModel::Conversion
   include ActiveModel::Validations
 
   validates :title, presence: true
@@ -14,11 +13,11 @@ class Post
 
   def publish(clock=DateTime)
     return false unless valid?
-		self.pubdate = clock.now
+    self.pubdate = clock.now
     blog.add_entry(self)
   end
 
-	def persisted?
-		false	
-	end
+  def persisted?
+    false
+  end
 end
